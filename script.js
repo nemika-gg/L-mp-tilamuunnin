@@ -6,13 +6,11 @@ function convertTemperature() {
 
     const decimals = document.querySelector('input[name="decimal"]:checked').value;
 
-    // Check if input is empty
     if (tempInput.trim() === "") {
         result.innerHTML = "Virhe: Anna lämpötila.";
         return;
     }
 
-    // Check if input is a number
     if (isNaN(tempInput)) {
         result.innerHTML = "Virhe: Syötä vain numeroita.";
         return;
@@ -21,7 +19,7 @@ function convertTemperature() {
     let temp = parseFloat(tempInput);
     let converted;
 
-    // Absolute zero check
+
     if (conversionType === "cToF") {
 
         if (temp < -273.15) {
@@ -36,7 +34,7 @@ function convertTemperature() {
 
     } else {
 
-        // Fahrenheit absolute zero
+    
         if (temp < -459.67) {
             result.innerHTML = "Virhe: Fahrenheit ei voi olla alle -459.67.";
             return;
